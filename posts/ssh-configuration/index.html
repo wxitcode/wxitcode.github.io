@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
   <head>
-    <title>wxitcode</title>
+    <title>Ssh Configuration // wxitcode</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.54.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="wxitcode" />
-    <meta name="description" content="Nobody gets to live life backwards. Look ahead, that’s where your future lies." />
+    <meta name="description" content="" />
     <base href="https://blog.wxitcode.top" />
     <link rel="stylesheet" href="https://blog.wxitcode.top/css/main.min.ed2bee65dbc2f611ff1a2ca5cfa6d7ec362a8e79fea5cf61bb5213445359e232.css" />
   </head>
@@ -29,25 +29,55 @@
     </header>
     <main class="app-container">
       
-  <article>
-    <h1>wxitcode</h1>
-    <ul class="posts-list">
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.wxitcode.top/posts/ssh-configuration/">Ssh Configuration</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Ssh Configuration</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 15, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Mar 15, 2019
-          </span>
-        </li>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
       
-    </ul>
-    
 
+<h2 id="client">Client</h2>
 
+<pre><code class="language-bash"># generate public / private keys
+$ ssh-keygen -b 4096 -t rsa -C comments -f ~/.ssh/abc
+# copy public key to server
+$ ssh-copy-id -i ~/.ssh/abc.pub root@192.168.1.200
+# ssh-agent &amp;&amp; ssh-add
+$ ssh-add ~/.ssh/abc
+# ssh-add -l check
+$ ssh-add -l
+</code></pre>
 
+<h2 id="server">Server</h2>
+
+<pre><code class="language-bash"># add user A
+[root@hostname ~] # adduser A
+# set password for user A
+[root@hostname ~] # passwd A
+# add user A to group `wheel`
+[root@hostname ~] # gpasswd -a A wheel
+</code></pre>
+
+<h2 id="login">Login</h2>
+
+<pre><code class="language-bash"># Login with ssh -o PubkeyAuthentication=yes root@192.168.1.200
+$ ssh root@192.168.1.200
+</code></pre>
+
+    </div>
   </article>
 
     </main>

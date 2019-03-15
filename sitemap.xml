@@ -3,7 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.wxitcode.top/posts/ssh-configuration/</loc>
+    <lastmod>2019-03-15T23:28:28+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.wxitcode.top/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wxitcode.top/posts/</loc>
+    <lastmod>2019-03-15T23:28:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,6 +25,7 @@
   
   <url>
     <loc>https://blog.wxitcode.top/</loc>
+    <lastmod>2019-03-15T23:28:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
